@@ -7,6 +7,7 @@
   var index = 0;
   var solved = false;
   var score = { correct: 0, attempts: 0 };
+  var selectedSquare = null;
 
   var SCORE_KEY = 'tactics_trainer_score_v1';
 
@@ -40,17 +41,26 @@
     index = (i + puzzles.length) % puzzles.length;
     var p = currentPuzzle();
     solved = false;
+    clearSelection();
 
     game.load(p.fen);
     board.orientation(p.orientation === 'black' ? 'black' : 'white');
     board.position(p.fen, false);
 
-    var typeLabel = p.type === 'mate' ? 'チェックメイトを発見しよう' : '駒得のタクティクスを発見しよう';
+    var TYPE_LABELS = {
+      mate_found: 'チェックメイトを決めた一局',
+      material_found: '駒得・優勢を決めた一局',
+      mate_missed: '見逃したメイトを発見しよう',
+      material_missed: '見逃した駒得タクティクスを発見しよう'
+    };
+    var typeLabel = TYPE_LABELS[p.type] || '';
     $('#progress').text('問題 ' + (index + 1) + ' / ' + puzzles.length);
     $('#puzzle-title').text('問題 ' + (index + 1) + ' — ' + typeLabel);
+    var prevLine = p.prev_san ? ('直前の相手の手: ' + escapeHtml(p.prev_san) + '<br/>') : '';
     $('#puzzle-meta').html(
       '対 ' + escapeHtml(p.opponent) + ' / ' + p.date + '<br/>' +
-      escapeHtml(p.opening || '')
+      escapeHtml(p.opening || '') + '<br/>' +
+      prevLine
     );
     $('#side-to-move').text((p.orientation === 'white' ? '白' : '黒') + ' 番 — あなたの手番です');
     $('#lichess-link').attr('href', p.lichess_url);
@@ -70,7 +80,7 @@
     var p = currentPuzzle();
     $('#ans-best').text(p.best_san + ' (' + p.best_uci + ')');
     $('#ans-actual').text(p.san + ' (' + p.uci + ')');
-    if (p.type === 'mate') {
+    if (p.type === 'mate_found' || p.type === 'mate_missed') {
       $('#ans-eval').text('この対局ではこの手でチェックメイトです。');
     } else {
       $('#ans-eval').text('評価値: ' + (p.eval_before / 100).toFixed(2) + ' → ' + (p.eval_after / 100).toFixed(2));
@@ -84,13 +94,16 @@
     var turnColor = p.orientation === 'white' ? 'w' : 'b';
     if (piece.search(new RegExp('^' + (turnColor === 'w' ? 'b' : 'w'))) === 0) return false;
     if (game.turn() !== turnColor) return false;
+    clearSelection();
   }
 
-  function onDrop(source, target) {
-    if (solved) return 'snapback';
+  // Shared by drag-and-drop and click-to-move. Returns true if a legal chess
+  // move was attempted (whether or not it matched the puzzle's answer).
+  function attemptMove(from, to) {
+    if (solved) return false;
     var p = currentPuzzle();
-    var move = game.move({ from: source, to: target, promotion: 'q' });
-    if (move === null) return 'snapback';
+    var move = game.move({ from: from, to: to, promotion: 'q' });
+    if (move === null) return false;
 
     var playedUci = move.from + move.to + (move.promotion || '');
     score.attempts += 1;
@@ -103,16 +116,66 @@
     } else {
       game.undo();
       $('#feedback').attr('class', 'feedback bad').text('その手 (' + move.san + ') は最善手ではありません。もう一度考えてみましょう。');
-      saveScore();
-      renderScore();
-      return 'snapback';
     }
+    board.position(game.fen());
     saveScore();
     renderScore();
+    return true;
+  }
+
+  function onDrop(source, target) {
+    if (solved) return 'snapback';
+    clearSelection();
+    var ok = attemptMove(source, target);
+    if (!ok) return 'snapback';
   }
 
   function onSnapEnd() {
     board.position(game.fen());
+  }
+
+  // ---- click-to-move (select a piece, then click a highlighted square) ----
+
+  function clearSelection() {
+    selectedSquare = null;
+    $('#board').find('.square-55d63').removeClass('square-selected-highlight square-legal-highlight');
+  }
+
+  function selectSquare(square) {
+    selectedSquare = square;
+    $('#board').find('.square-' + square).addClass('square-selected-highlight');
+    var moves = game.moves({ square: square, verbose: true });
+    moves.forEach(function (mv) {
+      $('#board').find('.square-' + mv.to).addClass('square-legal-highlight');
+    });
+  }
+
+  function onSquareClick(square) {
+    if (solved) return;
+    var p = currentPuzzle();
+    var turnColor = p.orientation === 'white' ? 'w' : 'b';
+
+    if (selectedSquare) {
+      if (square === selectedSquare) {
+        clearSelection();
+        return;
+      }
+      var piece = game.get(square);
+      if (piece && piece.color === turnColor) {
+        clearSelection();
+        selectSquare(square);
+        return;
+      }
+      var from = selectedSquare;
+      clearSelection();
+      attemptMove(from, square);
+      return;
+    }
+
+    if (game.turn() !== turnColor) return;
+    var p2 = game.get(square);
+    if (!p2 || p2.color !== turnColor) return;
+    selectSquare(square);
   }
 
   function resetPuzzle() {
@@ -132,10 +195,15 @@
       onSnapEnd: onSnapEnd,
     });
 
+    $('#board').on('click', '.square-55d63', function () {
+      onSquareClick($(this).attr('data-square'));
+    });
+
     $('#btn-prev').on('click', function () { loadPuzzle(index - 1); });
     $('#btn-next').on('click', function () { loadPuzzle(index + 1); });
     $('#btn-retry').on('click', resetPuzzle);
     $('#btn-answer').on('click', function () {
+      clearSelection();
       solved = true;
       showAnswer();
       $('#feedback').attr('class', 'feedback').text('解答を表示しました。');
@@ -143,7 +211,7 @@
 
     fetchJSON('data/puzzles.json').then(function (data) {
       puzzles = data.puzzles;
-      $('#subtitle').text('自分の対局で実際に決めたチェックメイトや、大きく駒得・優勢になったタクティクス、全' + puzzles.length + '問。盤面の駒を動かして最善手を見つけましょう。');
+      $('#subtitle').text('自分の対局で実際に決めた/見逃したチェックメイトや駒得タクティクス、全' + puzzles.length + '問。盤面の駒を動かして最善手を見つけましょう。');
       $('#generated-at').text('Generated ' + data.generated_at + ' / source: ' + data.source);
       loadPuzzle(0);
     }).catch(function (err) {

@@ -49,6 +49,26 @@ main {
 .board-pane { position: sticky; top: 1rem; }
 .board { width: 100%; max-width: 480px; }
 
+.board .square-55d63 { cursor: pointer; }
+.board .square-selected-highlight {
+  box-shadow: inset 0 0 0 4px var(--accent);
+}
+.board .square-legal-highlight {
+  position: relative;
+}
+.board .square-legal-highlight::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26%;
+  height: 26%;
+  background: rgba(37, 99, 235, 0.55);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
 .board-controls {
   display: flex;
   align-items: center;
