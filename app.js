@@ -94,7 +94,6 @@
     var turnColor = p.orientation === 'white' ? 'w' : 'b';
     if (piece.search(new RegExp('^' + (turnColor === 'w' ? 'b' : 'w'))) === 0) return false;
     if (game.turn() !== turnColor) return false;
-    clearSelection();
   }
 
   // Shared by drag-and-drop and click-to-move. Returns true if a legal chess
@@ -125,6 +124,14 @@
 
   function onDrop(source, target) {
     if (solved) return 'snapback';
+    // With draggable: true, chessboard.js turns a click on a piece into a
+    // zero-distance drag (mousedown starts the drag, mouseup lands on the
+    // dragged clone outside #board), so no click event reaches the square.
+    // Treat a drop back on the source square as a click.
+    if (source === target) {
+      onSquareClick(source);
+      return 'snapback';
+    }
     clearSelection();
     var ok = attemptMove(source, target);
     if (!ok) return 'snapback';
