@@ -5,6 +5,87 @@
     {
       "id": 1,
       "type": "mate_missed",
+      "fen": "2r4k/6pp/4br2/2p1Q3/P1B5/3P1pPq/1P3P1P/4R1RK b - - 6 31",
+      "orientation": "black",
+      "san": "Re8",
+      "uci": "c8e8",
+      "best_san": "Qxh2+",
+      "best_uci": "h3h2",
+      "prev_san": "Bc4",
+      "prev_uci": "b5c4",
+      "opponent": "downthetunnel",
+      "date": "2026-10-03",
+      "opening": "Sicilian Defense...4.d3 e6 5.O O Be7",
+      "eval_before": 100000,
+      "eval_after": -385,
+      "eval_prev": -298,
+      "lichess_url": "https://lichess.org/analysis/standard/2r4k%2F6pp%2F4br2%2F2p1Q3%2FP1B5%2F3P1pPq%2F1P3P1P%2F4R1RK_b_-_-_6_31",
+      "game_url": "https://www.chess.com/game/live/184756958984",
+      "mate_in": 3,
+      "line_san": "Qxh2+ Kxh2 Rh6+ Qh5 Rxh5#",
+      "solution": {
+        "h3h2": {
+          "reply": "h1h2",
+          "next": {
+            "f6h6": {
+              "reply": "e5h5",
+              "next": {
+                "h6h5": null
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "type": "mate_missed",
+      "fen": "3r1qk1/1b4p1/1p3p2/2pPpBpQ/2P1P3/P5P1/1P3P1P/4R1K1 w - - 2 31",
+      "orientation": "white",
+      "san": "Bg6",
+      "uci": "f5g6",
+      "best_san": "Be6+",
+      "best_uci": "f5e6",
+      "prev_san": "Qf8",
+      "prev_uci": "e7f8",
+      "opponent": "Hitham80",
+      "date": "2026-10-03",
+      "opening": "Reti Opening",
+      "eval_before": 100000,
+      "eval_after": 938,
+      "eval_prev": 486,
+      "lichess_url": "https://lichess.org/analysis/standard/3r1qk1%2F1b4p1%2F1p3p2%2F2pPpBpQ%2F2P1P3%2FP5P1%2F1P3P1P%2F4R1K1_w_-_-_2_31",
+      "game_url": "https://www.chess.com/game/live/184730816556",
+      "mate_in": 3,
+      "line_san": "Be6+ Qf7 Qxf7+ Kh8 Qh5#",
+      "solution": {
+        "f5h7": {
+          "reply": "g8h8",
+          "next": {
+            "h7g6": {
+              "reply": "h8g8",
+              "next": {
+                "h5h7": null
+              }
+            }
+          }
+        },
+        "f5e6": {
+          "reply": "f8f7",
+          "next": {
+            "h5f7": {
+              "reply": "g8h8",
+              "next": {
+                "f7h5": null
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "type": "mate_missed",
       "fen": "1q5k/1p3R1p/6p1/2p5/8/1QP4P/PP2rPP1/6K1 b - - 1 31",
       "orientation": "black",
       "san": "b6",
@@ -20,10 +101,98 @@
       "eval_after": -299,
       "eval_prev": -402,
       "lichess_url": "https://lichess.org/analysis/standard/1q5k%2F1p3R1p%2F6p1%2F2p5%2F8%2F1QP4P%2FPP2rPP1%2F6K1_b_-_-_1_31",
-      "game_url": "https://www.chess.com/game/live/184090240738"
+      "game_url": "https://www.chess.com/game/live/184090240738",
+      "mate_in": 1,
+      "line_san": "Re1#",
+      "solution": {
+        "e2e1": null
+      }
     },
     {
-      "id": 2,
+      "id": 4,
+      "type": "mate_missed",
+      "fen": "8/p4r2/1p5p/2p4k/2P1QP2/1P4P1/P5KP/b7 w - - 4 33",
+      "orientation": "white",
+      "san": "Qd5+",
+      "uci": "e4d5",
+      "best_san": "Kh3",
+      "best_uci": "g2h3",
+      "prev_san": "Kh5",
+      "prev_uci": "g6h5",
+      "opponent": "YellowRavenFDB",
+      "date": "2026-09-16",
+      "opening": "Kings Indian Defense Fianchetto Debrecen Classical Main Line 8.dxe5 dxe5 9.Qc2",
+      "eval_before": 100000,
+      "eval_after": 522,
+      "eval_prev": 489,
+      "lichess_url": "https://lichess.org/analysis/standard/8%2Fp4r2%2F1p5p%2F2p4k%2F2P1QP2%2F1P4P1%2FP5KP%2Fb7_w_-_-_4_33",
+      "game_url": "https://www.chess.com/game/live/180000107726",
+      "mate_in": 3,
+      "line_san": "Kh3 Rg7 Qf5+ Rg5 g4#",
+      "solution": {
+        "g2h3": {
+          "reply": "f7g7",
+          "next": {
+            "e4e8": {
+              "reply": "g7g6",
+              "next": {
+                "g3g4": null
+              }
+            },
+            "e4f5": {
+              "reply": "g7g5",
+              "next": {
+                "g3g4": null
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 5,
+      "type": "mate_missed",
+      "fen": "6k1/4bpp1/3p3p/1N1Pp2P/p3P1P1/Q4PK1/8/2q5 b - - 4 35",
+      "orientation": "black",
+      "san": "Qe1+",
+      "uci": "c1e1",
+      "best_san": "Qg1+",
+      "best_uci": "c1g1",
+      "prev_san": "Qa3",
+      "prev_uci": "d3a3",
+      "opponent": "Top_Noodlle",
+      "date": "2026-09-06",
+      "opening": "Sicilian Defense Bowdler Attack",
+      "eval_before": 100000,
+      "eval_after": 587,
+      "eval_prev": 392,
+      "lichess_url": "https://lichess.org/analysis/standard/6k1%2F4bpp1%2F3p3p%2F1N1Pp2P%2Fp3P1P1%2FQ4PK1%2F8%2F2q5_b_-_-_4_35",
+      "game_url": "https://www.chess.com/game/live/174078633844",
+      "mate_in": 3,
+      "line_san": "Qg1+ Kh3 Qh1+ Kg3 Bh4#",
+      "solution": {
+        "c1g1": {
+          "reply": "g3h3",
+          "next": {
+            "e7h4": {
+              "reply": "a3b4",
+              "next": {
+                "g1g3": null,
+                "g1h1": null
+              }
+            },
+            "g1h1": {
+              "reply": "h3g3",
+              "next": {
+                "e7h4": null
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 6,
       "type": "mate_missed",
       "fen": "6rk/3R2pp/p7/1p6/8/6P1/PBP4P/4rn1K b - - 0 31",
       "orientation": "black",
@@ -40,30 +209,145 @@
       "eval_after": 580,
       "eval_prev": 483,
       "lichess_url": "https://lichess.org/analysis/standard/6rk%2F3R2pp%2Fp7%2F1p6%2F8%2F6P1%2FPBP4P%2F4rn1K_b_-_-_0_31",
-      "game_url": "https://www.chess.com/game/live/174064486360"
+      "game_url": "https://www.chess.com/game/live/174064486360",
+      "mate_in": 1,
+      "line_san": "Ne3#",
+      "solution": {
+        "f1e3": null
+      }
     },
     {
-      "id": 3,
+      "id": 7,
       "type": "mate_missed",
-      "fen": "b2r2k1/1qr2ppp/pn1P1n2/R3p1N1/1b6/1BNPB2P/3Q1PP1/5RK1 b - - 0 24",
-      "orientation": "black",
-      "san": "Rcd7",
-      "uci": "c7d7",
-      "best_san": "Qxg2#",
-      "best_uci": "b7g2",
-      "prev_san": "d6",
-      "prev_uci": "d5d6",
-      "opponent": "SawVictoraaaaa",
-      "date": "2026-02-22",
-      "opening": "Sicilian Defense 2.Nf3 d6 3.Bc4 Nf6 4.d3",
+      "fen": "6k1/pp1n1ppp/3Br1b1/3p4/3P4/4P1P1/PP3P1P/2R3K1 w - - 1 21",
+      "orientation": "white",
+      "san": "Ba3",
+      "uci": "d6a3",
+      "best_san": "Rc8+",
+      "best_uci": "c1c8",
+      "prev_san": "Re6",
+      "prev_uci": "e8e6",
+      "opponent": "slay2k",
+      "date": "2026-09-05",
+      "opening": "Kings Indian Attack Yugoslav Variation 3.Bg2 Nc6 4.d4 Bf5 5.O O",
       "eval_before": 100000,
-      "eval_after": 600,
-      "eval_prev": 350,
-      "lichess_url": "https://lichess.org/analysis/standard/b2r2k1%2F1qr2ppp%2Fpn1P1n2%2FR3p1N1%2F1b6%2F1BNPB2P%2F3Q1PP1%2F5RK1_b_-_-_0_24",
-      "game_url": "https://www.chess.com/game/live/165049879400"
+      "eval_after": -395,
+      "eval_prev": -320,
+      "lichess_url": "https://lichess.org/analysis/standard/6k1%2Fpp1n1ppp%2F3Br1b1%2F3p4%2F3P4%2F4P1P1%2FPP3P1P%2F2R3K1_w_-_-_1_21",
+      "game_url": "https://www.chess.com/game/live/174035559916",
+      "mate_in": 3,
+      "line_san": "Rc8+ Re8 Rxe8+ Nf8 Rxf8#",
+      "solution": {
+        "c1c8": {
+          "reply": "e6e8",
+          "next": {
+            "c8e8": {
+              "reply": "d7f8",
+              "next": {
+                "e8f8": null
+              }
+            }
+          }
+        }
+      }
     },
     {
-      "id": 4,
+      "id": 8,
+      "type": "mate_missed",
+      "fen": "2r3k1/3Qbpp1/p3p3/1p4P1/2q5/Pb3B2/1P1R4/K5R1 b - - 11 29",
+      "orientation": "black",
+      "san": "Qc5",
+      "uci": "c4c5",
+      "best_san": "Qc1+",
+      "best_uci": "c4c1",
+      "prev_san": "Rg1",
+      "prev_uci": "g2g1",
+      "opponent": "CarloCasteddu",
+      "date": "2026-07-31",
+      "opening": "Sicilian Defense Open Najdorf Variation 6.Bg5 e6 7.Qd2 Be7",
+      "eval_before": 100000,
+      "eval_after": 237,
+      "eval_prev": 186,
+      "lichess_url": "https://lichess.org/analysis/standard/2r3k1%2F3Qbpp1%2Fp3p3%2F1p4P1%2F2q5%2FPb3B2%2F1P1R4%2FK5R1_b_-_-_11_29",
+      "game_url": "https://www.chess.com/game/live/172339626928",
+      "mate_in": 2,
+      "line_san": "Qc1+ Rxc1 Rxc1#",
+      "solution": {
+        "c4c1": {
+          "reply": "g1c1",
+          "next": {
+            "c8c1": null
+          }
+        }
+      }
+    },
+    {
+      "id": 9,
+      "type": "mate_missed",
+      "fen": "4r1k1/pp3pp1/7p/3Q4/3np1q1/3p2P1/PP1R1P1P/4RK2 b - - 3 30",
+      "orientation": "black",
+      "san": "Nf3",
+      "uci": "d4f3",
+      "best_san": "Qh3+",
+      "best_uci": "g4h3",
+      "prev_san": "Qd5",
+      "prev_uci": "b3d5",
+      "opponent": "RSDreamer",
+      "date": "2026-07-13",
+      "opening": "Sicilian Defense Delayed Alapin Variation 3...Nf6 4.e5 dxe5",
+      "eval_before": 100000,
+      "eval_after": 585,
+      "eval_prev": 448,
+      "lichess_url": "https://lichess.org/analysis/standard/4r1k1%2Fpp3pp1%2F7p%2F3Q4%2F3np1q1%2F3p2P1%2FPP1R1P1P%2F4RK2_b_-_-_3_30",
+      "game_url": "https://www.chess.com/game/live/171514668944",
+      "mate_in": 3,
+      "line_san": "Qh3+ Kg1 Nf3+ Kh1 Qxh2#",
+      "solution": {
+        "g4h3": {
+          "reply": "f1g1",
+          "next": {
+            "d4f3": {
+              "reply": "g1h1",
+              "next": {
+                "h3h2": null
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 10,
+      "type": "mate_missed",
+      "fen": "B1b4r/4kp2/4p2p/1p2n1p1/2p1N3/6P1/1b1B1P1P/2RR2K1 w - - 0 22",
+      "orientation": "white",
+      "san": "Rb1",
+      "uci": "c1b1",
+      "best_san": "Bb4+",
+      "best_uci": "d2b4",
+      "prev_san": "Bxb2",
+      "prev_uci": "d4b2",
+      "opponent": "nafaneck",
+      "date": "2026-06-06",
+      "opening": "Queens Pawn Opening Zukertort Variation...3.g3 Nf6 4.Bg2 e6 5.O O",
+      "eval_before": 100000,
+      "eval_after": 322,
+      "eval_prev": 307,
+      "lichess_url": "https://lichess.org/analysis/standard/B1b4r%2F4kp2%2F4p2p%2F1p2n1p1%2F2p1N3%2F6P1%2F1b1B1P1P%2F2RR2K1_w_-_-_0_22",
+      "game_url": "https://www.chess.com/game/live/169820044086",
+      "mate_in": 2,
+      "line_san": "Bb4+ Ke8 Nf6#",
+      "solution": {
+        "d2b4": {
+          "reply": "e7e8",
+          "next": {
+            "e4f6": null
+          }
+        }
+      }
+    },
+    {
+      "id": 11,
       "type": "material_found",
       "fen": "r1bq1rk1/1p1nbppp/p2ppn1B/2p5/2B1P3/3P1N2/PPPQ1PPP/RN2K2R b KQ - 3 9",
       "orientation": "black",
@@ -83,7 +367,7 @@
       "game_url": "https://www.chess.com/game/live/185465622490"
     },
     {
-      "id": 5,
+      "id": 12,
       "type": "material_found",
       "fen": "r3kb1r/ppp2ppp/2nqpn2/4Nb2/Q1pP4/6P1/PP1NPPBP/R1B2RK1 w kq - 6 10",
       "orientation": "white",
@@ -103,7 +387,7 @@
       "game_url": "https://www.chess.com/game/live/185457024718"
     },
     {
-      "id": 6,
+      "id": 13,
       "type": "material_found",
       "fen": "4brk1/2r1b1pp/pq1p4/1p1Pp1N1/2P2pQ1/1P5P/PB3PP1/2R1R1K1 b - - 9 25",
       "orientation": "black",
@@ -123,7 +407,7 @@
       "game_url": "https://www.chess.com/game/live/185451096364"
     },
     {
-      "id": 7,
+      "id": 14,
       "type": "material_found",
       "fen": "3r2k1/1pr3p1/pb5p/3P1p2/2B1p3/1P2P1P1/P4P1P/2RR2K1 w - - 0 28",
       "orientation": "white",
@@ -143,7 +427,7 @@
       "game_url": "https://www.chess.com/game/live/185431880086"
     },
     {
-      "id": 8,
+      "id": 15,
       "type": "material_found",
       "fen": "2r2rk1/4bppp/R1N1p3/1P1q4/8/1Q5P/5PP1/R5K1 b - - 2 26",
       "orientation": "black",
@@ -163,7 +447,7 @@
       "game_url": "https://www.chess.com/game/live/185431097712"
     },
     {
-      "id": 9,
+      "id": 16,
       "type": "material_found",
       "fen": "2rr2k1/p1p2pb1/1p1qp1Np/8/3P4/2PQ4/PP3PPP/3RR1K1 b - - 0 21",
       "orientation": "black",
@@ -183,7 +467,7 @@
       "game_url": "https://www.chess.com/game/live/185428669522"
     },
     {
-      "id": 10,
+      "id": 17,
       "type": "material_found",
       "fen": "2kr3r/ppp2pp1/2n4p/4P1bq/2PP1R2/4BNP1/PP3PKP/R2Q4 w - - 1 18",
       "orientation": "white",
@@ -203,7 +487,7 @@
       "game_url": "https://www.chess.com/game/live/185427899504"
     },
     {
-      "id": 11,
+      "id": 18,
       "type": "material_found",
       "fen": "2r3k1/3n2pp/npp1pq2/p2p4/2PP4/PP3rPB/1B1Q1P1P/4RRK1 w - - 3 20",
       "orientation": "white",
@@ -223,7 +507,7 @@
       "game_url": "https://www.chess.com/game/live/185427209094"
     },
     {
-      "id": 12,
+      "id": 19,
       "type": "material_found",
       "fen": "8/7p/4R1p1/4k3/P6P/4p3/KP3r2/8 b - - 1 41",
       "orientation": "black",
@@ -243,27 +527,27 @@
       "game_url": "https://www.chess.com/game/live/185422687348"
     },
     {
-      "id": 13,
+      "id": 20,
       "type": "material_found",
-      "fen": "1rn4r/4b3/2Qpkp1p/2P1p3/4P1p1/1P4P1/P2q1P1P/5BK1 w - - 1 30",
+      "fen": "2kr1b1r/p1pqn3/1p1p1p1p/n2Pp3/2P1P1p1/1N2B1P1/PP3PBP/R3QRK1 w - - 1 15",
       "orientation": "white",
-      "san": "Bc4+",
-      "uci": "f1c4",
-      "best_san": "Bc4+",
-      "best_uci": "f1c4",
-      "prev_san": "Be7",
-      "prev_uci": "f8e7",
+      "san": "Nxa5",
+      "uci": "b3a5",
+      "best_san": "Nxa5",
+      "best_uci": "b3a5",
+      "prev_san": "Na5",
+      "prev_uci": "c6a5",
       "opponent": "Gregoriuss",
       "date": "2026-10-16",
       "opening": "Nimzowitsch Defense Declined Williams Variation 3.d4",
-      "eval_before": -379,
-      "eval_after": 100000,
-      "eval_prev": -379,
-      "lichess_url": "https://lichess.org/analysis/standard/1rn4r%2F4b3%2F2Qpkp1p%2F2P1p3%2F4P1p1%2F1P4P1%2FP2q1P1P%2F5BK1_w_-_-_1_30",
+      "eval_before": 223,
+      "eval_after": 418,
+      "eval_prev": 223,
+      "lichess_url": "https://lichess.org/analysis/standard/2kr1b1r%2Fp1pqn3%2F1p1p1p1p%2Fn2Pp3%2F2P1P1p1%2F1N2B1P1%2FPP3PBP%2FR3QRK1_w_-_-_1_15",
       "game_url": "https://www.chess.com/game/live/185422109152"
     },
     {
-      "id": 14,
+      "id": 21,
       "type": "material_missed",
       "fen": "3r2k1/ppr3p1/1b5p/3P1p2/2B1p3/4P1P1/PP3P1P/2RR2K1 w - - 4 27",
       "orientation": "white",
@@ -283,7 +567,7 @@
       "game_url": "https://www.chess.com/game/live/185431880086"
     },
     {
-      "id": 15,
+      "id": 22,
       "type": "material_missed",
       "fen": "r1b2rk1/1p3pp1/p4b1p/2Q2N2/8/3q4/PP1P1PPP/R1B2RK1 b - - 1 19",
       "orientation": "black",
@@ -303,7 +587,7 @@
       "game_url": "https://www.chess.com/game/live/185411244020"
     },
     {
-      "id": 16,
+      "id": 23,
       "type": "material_missed",
       "fen": "r4rk1/1p1qn1pp/2n1pp2/p2p4/3PP1B1/6P1/PPQB1P1P/2R1R1K1 w - - 2 16",
       "orientation": "white",
@@ -323,7 +607,7 @@
       "game_url": "https://www.chess.com/game/live/185410754928"
     },
     {
-      "id": 17,
+      "id": 24,
       "type": "material_missed",
       "fen": "3rqk2/p1Q2pp1/1p5p/8/3NPn2/7P/PP4P1/3R2K1 b - - 2 28",
       "orientation": "black",
@@ -343,7 +627,7 @@
       "game_url": "https://www.chess.com/game/live/185209331978"
     },
     {
-      "id": 18,
+      "id": 25,
       "type": "material_missed",
       "fen": "2kr3r/ppp2p2/3bqp2/5P2/2p1P1pB/6P1/Pn4BP/R2Q1RK1 w - - 0 18",
       "orientation": "white",
@@ -363,7 +647,7 @@
       "game_url": "https://www.chess.com/game/live/185204322690"
     },
     {
-      "id": 19,
+      "id": 26,
       "type": "material_missed",
       "fen": "rnbqk2r/pp2bppp/3p1n2/4N3/2B5/8/PPP2PPP/RNBQR1K1 b kq - 0 9",
       "orientation": "black",
@@ -383,7 +667,7 @@
       "game_url": "https://www.chess.com/game/live/185137938042"
     },
     {
-      "id": 20,
+      "id": 27,
       "type": "material_missed",
       "fen": "4r3/p2r2kp/b4pp1/2PBq3/1PpR4/6PP/P2Q1P2/3R2K1 w - - 5 30",
       "orientation": "white",
@@ -403,7 +687,7 @@
       "game_url": "https://www.chess.com/game/live/185092773002"
     },
     {
-      "id": 21,
+      "id": 28,
       "type": "material_missed",
       "fen": "r1bq1rk1/ppp1bpp1/2n1pn1p/8/5B2/2PB1N2/PP1N1PPP/R2Q1RK1 b - - 3 10",
       "orientation": "black",
@@ -423,7 +707,7 @@
       "game_url": "https://www.chess.com/game/live/185007141834"
     },
     {
-      "id": 22,
+      "id": 29,
       "type": "material_missed",
       "fen": "2r3k1/1p1rbppp/pBqp4/8/2PR2n1/1P3NP1/PQ2PPKP/2R5 w - - 7 24",
       "orientation": "white",
@@ -443,7 +727,7 @@
       "game_url": "https://www.chess.com/game/live/185003729078"
     },
     {
-      "id": 23,
+      "id": 30,
       "type": "material_missed",
       "fen": "r1q1k2r/ppp1bp2/5n2/3N2N1/3n2p1/1Q4P1/PP2PPKP/R1B2R2 w kq - 0 15",
       "orientation": "white",

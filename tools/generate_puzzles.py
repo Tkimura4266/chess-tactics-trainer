@@ -1,7 +1,9 @@
 """Generate data/puzzles.json from my own games (all games in the chess DB).
 
 Puzzle types (positions where I delivered mate are left out as too easy):
-  mate_missed    - mate in 1 was available but I played something else
+  mate_missed     - a forced mate (up to MAX_MATE_IN moves) was available but I
+                    played something else; stored with a solution tree so the
+                    trainer can play the opponent's replies
   material_found  - opponent blundered and I punished it with the best move
   material_missed - opponent blundered and I missed the punishing move
 
@@ -47,6 +49,10 @@ BLUNDER_CP = 200    # opponent's move must swing the eval by at least this much
 MISS_CP = 200       # my move must lose at least this much to count as a miss
 DECIDED_CP = 500    # game counts as already decided beyond this eval, either side
 CLIP = 1500         # clip evals so mate scores don't dominate swings
+MAX_MATE_IN = 3     # missed forced mates up to mate in this many of my moves
+MATE_LIMIT = chess.engine.Limit(depth=18, time=1.0)    # root mate search
+CHILD_LIMIT = chess.engine.Limit(depth=14, time=0.2)   # per-move mate check
+MATE_CACHE = CACHE_DIR / "mate_solution_cache_tactics.json"
 
 
 def clip(v):
@@ -102,6 +108,73 @@ def analyse_fen(fen):
                "best_move_uci": bm.uci() if bm else None,
                "best_move_san": b.san(bm) if bm else None}
     return {"key": cache_key(fen), "fen": fen, "depth": ENGINE_DEPTH, **res}
+
+
+def mate_tree(engine, board, me):
+    """All my moves that mate fastest from here, each with the opponent's best
+    defence and the subtree after it: {uci: None (mate) | {"reply", "next"}}."""
+    mating = [m for m in board.legal_moves if board.gives_check(m) and _is_mate_after(board, m)]
+    if mating:
+        return {m.uci(): None for m in mating}
+    dist = {}
+    for m in list(board.legal_moves):
+        board.push(m)
+        s = engine.analyse(board, CHILD_LIMIT)["score"].pov(me)
+        board.pop()
+        if s.is_mate() and s.mate() > 0:
+            dist[m] = s.mate()
+    if not dist:
+        return {}
+    shortest = min(dist.values())
+    tree = {}
+    for m in (m for m, d in dist.items() if d == shortest):
+        board.push(m)
+        reply = engine.play(board, CHILD_LIMIT).move
+        board.push(reply)
+        tree[m.uci()] = {"reply": reply.uci(), "next": mate_tree(engine, board, me)}
+        board.pop()
+        board.pop()
+    return tree
+
+
+def _is_mate_after(board, move):
+    board.push(move)
+    mate = board.is_checkmate()
+    board.pop()
+    return mate
+
+
+def mate_solution(engine, fen):
+    """Forced mate for the side to move: mate_in, solution tree and main line."""
+    board = chess.Board(fen)
+    me = board.turn
+    info = engine.analyse(board, MATE_LIMIT)
+    s = info["score"].pov(me)
+    if not (s.is_mate() and s.mate() > 0):
+        return None
+    if s.mate() > MAX_MATE_IN:
+        return {"mate_in": s.mate()}
+    tree = mate_tree(engine, board, me)
+    if not tree:
+        return None
+    # main line: follow the engine PV where it is in the tree
+    pv = [m.uci() for m in info.get("pv", [])]
+    line, node, b = [], tree, board.copy()
+    while node:
+        mv = pv[len(line)] if len(line) < len(pv) and pv[len(line)] in node else next(iter(node))
+        line.append(mv)
+        child = node[mv]
+        if child is None:
+            break
+        line.append(child["reply"])
+        node = child["next"]
+    sans = []
+    for u in line:
+        mv = chess.Move.from_uci(u)
+        sans.append(b.san(mv))
+        b.push(mv)
+    return {"mate_in": (len(line) + 1) // 2, "tree": tree, "line_uci": line,
+            "line_san": " ".join(sans)}
 
 
 def load_moves():
@@ -161,22 +234,46 @@ def main():
     best_tactical = mine["best_move_san"].astype(str).str.contains(r"x|\+")
     opp_blunder = (mine["prev_is_my"] == False) & (swing_prev >= BLUNDER_CP)
     not_decided = mine["prev_eval_before"].abs() < DECIDED_CP
+    forced_mate = mine["eval_before_cp"] >= MATE_SCORE_CP
     still_mating = mine["eval_after_cp"] >= MATE_SCORE_CP
 
     groups = {
-        "mate_missed": mine[not_decided & best_mate & ~played_mate & ~still_mating],
+        "mate_missed": mine[not_decided & forced_mate & ~played_mate & ~still_mating],
         "material_found": mine[not_decided & opp_blunder & is_best & best_tactical
-                               & ~played_mate & ~best_mate],
+                               & ~played_mate & ~best_mate & ~forced_mate],
         "material_missed": mine[not_decided & opp_blunder & ~is_best & best_tactical
-                                & (my_drop >= MISS_CP) & ~best_mate],
+                                & (my_drop >= MISS_CP) & ~best_mate & ~forced_mate],
     }
 
+    mate_cache = json.loads(MATE_CACHE.read_text(encoding="utf-8")) if MATE_CACHE.exists() else {}
+    engine = None
     puzzles = []
     for ptype, rows in groups.items():
         # newest first, one puzzle per game
         rows = rows.sort_values(["game_no", "ply"], ascending=False).drop_duplicates("game_id")
         print(f"{ptype}: {len(rows)} candidate games", flush=True)
-        for _, r in rows.head(PER_TYPE).iterrows():
+        picked = 0
+        for _, r in rows.iterrows():
+            if picked >= PER_TYPE:
+                break
+            extra = {}
+            if ptype == "mate_missed":
+                fen = r["fen_before"]
+                if fen not in mate_cache:
+                    if engine is None:
+                        engine = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)
+                        engine.configure({"Threads": 8, "Hash": 256})
+                    mate_cache[fen] = mate_solution(engine, fen)
+                    MATE_CACHE.write_text(json.dumps(mate_cache), encoding="utf-8")
+                sol = mate_cache[fen]
+                if sol is None or sol["mate_in"] > MAX_MATE_IN:
+                    continue
+                extra = {"mate_in": sol["mate_in"], "line_san": sol["line_san"],
+                         "solution": sol["tree"]}
+                best_uci, best_san = sol["line_uci"][0], sol["line_san"].split()[0]
+            else:
+                best_uci, best_san = r["best_move_uci"], r["best_move_san"]
+            picked += 1
             opponent = r["black"] if r["my_color"] == "white" else r["white"]
             if ptype == "mate_missed":
                 ev = (MATE_SCORE_CP, r["eval_after_cp"])
@@ -190,8 +287,8 @@ def main():
                 "orientation": r["my_color"],
                 "san": r["san"],
                 "uci": r["uci"],
-                "best_san": r["best_move_san"],
-                "best_uci": r["best_move_uci"],
+                "best_san": best_san,
+                "best_uci": best_uci,
                 "prev_san": r["prev_san"] if isinstance(r["prev_san"], str) else None,
                 "prev_uci": r["prev_uci"] if isinstance(r["prev_uci"], str) else None,
                 "opponent": opponent,
@@ -202,7 +299,10 @@ def main():
                 "eval_prev": int(r["prev_eval_before"]),
                 "lichess_url": lichess_url(r["fen_before"]),
                 "game_url": r["url"],
+                **extra,
             })
+    if engine is not None:
+        engine.quit()
     puzzles = [{"id": i, **p} for i, p in enumerate(puzzles, 1)]
 
     data = {

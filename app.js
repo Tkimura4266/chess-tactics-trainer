@@ -8,6 +8,11 @@
   var solved = false;
   var score = { correct: 0, attempts: 0 };
   var selectedSquare = null;
+  // Multi-move mate puzzles: the part of p.solution still to be played, as
+  // { myUci: null (mate) | { reply: uci, next: {...} } }.
+  var solutionNode = null;
+  var busy = false; // the opponent's reply is being played
+  var replyTimer = null;
 
   var SCORE_KEY = 'tactics_trainer_score_v1';
 
@@ -41,6 +46,9 @@
     index = (i + puzzles.length) % puzzles.length;
     var p = currentPuzzle();
     solved = false;
+    clearTimeout(replyTimer);
+    busy = false;
+    solutionNode = p.solution || null;
     clearSelection();
 
     game.load(p.fen);
@@ -54,6 +62,7 @@
       material_missed: '見逃した駒得タクティクスを発見しよう'
     };
     var typeLabel = TYPE_LABELS[p.type] || '';
+    if (p.type === 'mate_missed' && p.mate_in) typeLabel = '見逃した' + p.mate_in + '手詰めを発見しよう';
     $('#progress').text('問題 ' + (index + 1) + ' / ' + puzzles.length);
     $('#puzzle-title').text('問題 ' + (index + 1) + ' — ' + typeLabel);
     var prevLine = p.prev_san ? ('直前の相手の手: ' + escapeHtml(p.prev_san) + '<br/>') : '';
@@ -78,9 +87,11 @@
 
   function showAnswer() {
     var p = currentPuzzle();
-    $('#ans-best').text(p.best_san + ' (' + p.best_uci + ')');
+    $('#ans-best').text(p.line_san ? p.line_san : (p.best_san + ' (' + p.best_uci + ')'));
     $('#ans-actual').text(p.san + ' (' + p.uci + ')');
-    if (p.type === 'mate_found' || p.type === 'mate_missed') {
+    if (p.mate_in) {
+      $('#ans-eval').text('この局面には ' + p.mate_in + '手詰めがありました。');
+    } else if (p.type === 'mate_found' || p.type === 'mate_missed') {
       $('#ans-eval').text('この対局ではこの手でチェックメイトです。');
     } else {
       $('#ans-eval').text('評価値: ' + (p.eval_before / 100).toFixed(2) + ' → ' + (p.eval_after / 100).toFixed(2));
@@ -89,7 +100,7 @@
   }
 
   function onDragStart(source, piece) {
-    if (solved) return false;
+    if (solved || busy) return false;
     var p = currentPuzzle();
     var turnColor = p.orientation === 'white' ? 'w' : 'b';
     if (piece.search(new RegExp('^' + (turnColor === 'w' ? 'b' : 'w'))) === 0) return false;
@@ -99,16 +110,36 @@
   // Shared by drag-and-drop and click-to-move. Returns true if a legal chess
   // move was attempted (whether or not it matched the puzzle's answer).
   function attemptMove(from, to) {
-    if (solved) return false;
+    if (solved || busy) return false;
     var p = currentPuzzle();
     var move = game.move({ from: from, to: to, promotion: 'q' });
     if (move === null) return false;
 
     var playedUci = move.from + move.to + (move.promotion || '');
-    score.attempts += 1;
-
     var isMatePuzzle = p.type === 'mate_found' || p.type === 'mate_missed';
-    if (playedUci === p.best_uci || move.san === p.best_san || (isMatePuzzle && game.in_checkmate())) {
+    var mated = isMatePuzzle && game.in_checkmate();
+
+    // Correct intermediate move of a multi-move mate: play the reply, go on.
+    if (!mated && solutionNode && solutionNode[playedUci]) {
+      var step = solutionNode[playedUci];
+      solutionNode = step.next;
+      busy = true;
+      $('#feedback').attr('class', 'feedback good').text('いい手です (' + move.san + ')。相手の応手を待ちましょう…');
+      board.position(game.fen());
+      replyTimer = setTimeout(function () {
+        var reply = game.move({ from: step.reply.slice(0, 2), to: step.reply.slice(2, 4), promotion: step.reply.slice(4) || undefined });
+        board.position(game.fen());
+        busy = false;
+        $('#feedback').attr('class', 'feedback good').text('相手は ' + reply.san + '。続けて詰ませましょう。');
+      }, 600);
+      return true;
+    }
+
+    score.attempts += 1;
+    var correct = solutionNode
+      ? mated
+      : (playedUci === p.best_uci || move.san === p.best_san || mated);
+    if (correct) {
       solved = true;
       score.correct += 1;
       $('#feedback').attr('class', 'feedback good').text('正解! ' + move.san + (isMatePuzzle ? ' でチェックメイトです。' : ' が最善手でした。'));
@@ -159,7 +190,7 @@
   }
 
   function onSquareClick(square) {
-    if (solved) return;
+    if (solved || busy) return;
     var p = currentPuzzle();
     var turnColor = p.orientation === 'white' ? 'w' : 'b';
 
