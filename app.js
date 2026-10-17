@@ -219,7 +219,7 @@
 
     fetchJSON('data/puzzles.json').then(function (data) {
       puzzles = data.puzzles;
-      $('#subtitle').text('自分の対局で実際に決めた/見逃したチェックメイトや駒得タクティクス、全' + puzzles.length + '問。盤面の駒を動かして最善手を見つけましょう。');
+      $('#subtitle').text('自分の対局で決めた/見逃した駒得タクティクスと、見逃したチェックメイト、全' + puzzles.length + '問。盤面の駒を動かして最善手を見つけましょう。');
       $('#generated-at').text('Generated ' + data.generated_at + ' / source: ' + data.source);
       loadPuzzle(0);
     }).catch(function (err) {

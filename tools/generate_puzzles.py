@@ -1,8 +1,7 @@
 """Generate data/puzzles.json from my own games (all games in the chess DB).
 
-Puzzle types:
-  mate_found      - I delivered mate
-  mate_missed     - mate in 1 was available but I played something else
+Puzzle types (positions where I delivered mate are left out as too easy):
+  mate_missed    - mate in 1 was available but I played something else
   material_found  - opponent blundered and I punished it with the best move
   material_missed - opponent blundered and I missed the punishing move
 
@@ -165,7 +164,6 @@ def main():
     still_mating = mine["eval_after_cp"] >= MATE_SCORE_CP
 
     groups = {
-        "mate_found": mine[not_decided & played_mate],
         "mate_missed": mine[not_decided & best_mate & ~played_mate & ~still_mating],
         "material_found": mine[not_decided & opp_blunder & is_best & best_tactical
                                & ~played_mate & ~best_mate],
@@ -180,9 +178,7 @@ def main():
         print(f"{ptype}: {len(rows)} candidate games", flush=True)
         for _, r in rows.head(PER_TYPE).iterrows():
             opponent = r["black"] if r["my_color"] == "white" else r["white"]
-            if ptype == "mate_found":
-                ev = (MATE_SCORE_CP, -MATE_SCORE_CP)
-            elif ptype == "mate_missed":
+            if ptype == "mate_missed":
                 ev = (MATE_SCORE_CP, r["eval_after_cp"])
             elif ptype == "material_found":
                 ev = (r["prev_eval_before"], r["eval_after_cp"])
