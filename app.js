@@ -107,10 +107,11 @@
     var playedUci = move.from + move.to + (move.promotion || '');
     score.attempts += 1;
 
-    if (playedUci === p.best_uci || move.san === p.best_san) {
+    var isMatePuzzle = p.type === 'mate_found' || p.type === 'mate_missed';
+    if (playedUci === p.best_uci || move.san === p.best_san || (isMatePuzzle && game.in_checkmate())) {
       solved = true;
       score.correct += 1;
-      $('#feedback').attr('class', 'feedback good').text('正解! ' + move.san + ' が最善手でした。');
+      $('#feedback').attr('class', 'feedback good').text('正解! ' + move.san + (isMatePuzzle ? ' でチェックメイトです。' : ' が最善手でした。'));
       showAnswer();
     } else {
       game.undo();
