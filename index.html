@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Tactics Trainer</title>
+<meta name="description" content="自分の対局の重大ミス局面から作ったタクティクス問題を、盤面を動かして解けるトレーナー。">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>My Tactics Trainer</h1>
+  <p id="subtitle" class="muted"></p>
+</header>
+
+<main>
+  <section class="board-pane">
+    <div id="board" class="board"></div>
+    <div class="board-controls">
+      <button id="btn-prev">← 前の問題</button>
+      <span id="progress" class="progress"></span>
+      <button id="btn-next">次の問題 →</button>
+    </div>
+    <div class="board-controls">
+      <button id="btn-retry">もう一度</button>
+      <button id="btn-answer">解答を見る</button>
+    </div>
+    <p id="feedback" class="feedback"></p>
+  </section>
+
+  <section class="info-pane">
+    <h2 id="puzzle-title">&nbsp;</h2>
+    <p id="puzzle-meta" class="muted"></p>
+    <p class="lichess-link"><a id="lichess-link" href="#" target="_blank" rel="noopener">この局面をLichessで見る</a> ・
+       <a id="game-link" href="#" target="_blank" rel="noopener">対局を見る</a></p>
+
+    <h3>手番</h3>
+    <p id="side-to-move"></p>
+
+    <h3>解答 (「解答を見る」を押すと表示)</h3>
+    <div id="answer-box" class="answer-box hidden">
+      <p><strong>最善手:</strong> <span id="ans-best"></span></p>
+      <p><strong>実際に指した手 (ミス):</strong> <span id="ans-actual"></span></p>
+      <p><strong>評価値の変化:</strong> <span id="ans-eval"></span></p>
+    </div>
+
+    <h3>成績</h3>
+    <p id="score" class="muted"></p>
+  </section>
+</main>
+
+<footer>
+  <span id="generated-at"></span>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/chess.js@0.10.3/chess.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
