@@ -45,11 +45,11 @@
     board.orientation(p.orientation === 'black' ? 'black' : 'white');
     board.position(p.fen, false);
 
+    var typeLabel = p.type === 'mate' ? 'チェックメイトを発見しよう' : '駒得のタクティクスを発見しよう';
     $('#progress').text('問題 ' + (index + 1) + ' / ' + puzzles.length);
-    $('#puzzle-title').text('問題 ' + (index + 1));
+    $('#puzzle-title').text('問題 ' + (index + 1) + ' — ' + typeLabel);
     $('#puzzle-meta').html(
-      '対 ' + escapeHtml(p.opponent) + ' / ' + p.date + ' / ' +
-      escapeHtml(p.time_class) + ' (' + escapeHtml(p.time_control) + ')<br/>' +
+      '対 ' + escapeHtml(p.opponent) + ' / ' + p.date + '<br/>' +
       escapeHtml(p.opening || '')
     );
     $('#side-to-move').text((p.orientation === 'white' ? '白' : '黒') + ' 番 — あなたの手番です');
@@ -70,7 +70,11 @@
     var p = currentPuzzle();
     $('#ans-best').text(p.best_san + ' (' + p.best_uci + ')');
     $('#ans-actual').text(p.san + ' (' + p.uci + ')');
-    $('#ans-eval').text(p.eval_before + ' → ' + p.eval_after + ' (悪化 ' + p.eval_drop + ')');
+    if (p.type === 'mate') {
+      $('#ans-eval').text('この対局ではこの手でチェックメイトです。');
+    } else {
+      $('#ans-eval').text('評価値: ' + (p.eval_before / 100).toFixed(2) + ' → ' + (p.eval_after / 100).toFixed(2));
+    }
     $('#answer-box').removeClass('hidden');
   }
 
@@ -139,7 +143,7 @@
 
     fetchJSON('data/puzzles.json').then(function (data) {
       puzzles = data.puzzles;
-      $('#subtitle').text('直近の対局で評価値が大きく落ちた(自分のミス)局面、全' + puzzles.length + '問。盤面の駒を動かして最善手を見つけましょう。');
+      $('#subtitle').text('自分の対局で実際に決めたチェックメイトや、大きく駒得・優勢になったタクティクス、全' + puzzles.length + '問。盤面の駒を動かして最善手を見つけましょう。');
       $('#generated-at').text('Generated ' + data.generated_at + ' / source: ' + data.source);
       loadPuzzle(0);
     }).catch(function (err) {
