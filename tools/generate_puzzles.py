@@ -49,7 +49,7 @@ BLUNDER_CP = 200    # opponent's move must swing the eval by at least this much
 MISS_CP = 200       # my move must lose at least this much to count as a miss
 DECIDED_CP = 500    # game counts as already decided beyond this eval, either side
 CLIP = 1500         # clip evals so mate scores don't dominate swings
-MAX_MATE_IN = 3     # missed forced mates up to mate in this many of my moves
+MAX_MATE_IN = 4    # missed forced mates up to mate in this many of my moves
 MATE_LIMIT = chess.engine.Limit(depth=18, time=1.0)    # root mate search
 CHILD_LIMIT = chess.engine.Limit(depth=14, time=0.2)   # per-move mate check
 MATE_CACHE = CACHE_DIR / "mate_solution_cache_tactics.json"
@@ -254,12 +254,16 @@ def main():
         print(f"{ptype}: {len(rows)} candidate games", flush=True)
         picked = 0
         for _, r in rows.iterrows():
-            if picked >= PER_TYPE:
+            # missed mates are rare, so keep all of them
+            if ptype != "mate_missed" and picked >= PER_TYPE:
                 break
             extra = {}
             if ptype == "mate_missed":
                 fen = r["fen_before"]
-                if fen not in mate_cache:
+                cached = mate_cache.get(fen, {})
+                # entries beyond an earlier MAX_MATE_IN were cached without a tree
+                if fen not in mate_cache or (cached and "tree" not in cached
+                                             and cached["mate_in"] <= MAX_MATE_IN):
                     if engine is None:
                         engine = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)
                         engine.configure({"Threads": 8, "Hash": 256})
@@ -307,7 +311,8 @@ def main():
 
     data = {
         "generated_at": date.today().isoformat(),
-        "source": (f"my games, newest {PER_TYPE} each, excluding already-decided games "
+        "source": (f"my games: all missed mates in <= {MAX_MATE_IN}, newest {PER_TYPE} "
+                   f"material tactics each, excluding already-decided games "
                    f"(|eval| before opponent's move < {DECIDED_CP}cp)"),
         "puzzles": puzzles,
     }
