@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21",
+  "generated_at": "2026-10-22",
   "source": "my games: all missed mates in <= 4, newest 10 material tactics each, excluding already-decided games (|eval| before opponent's move < 500cp)",
   "puzzles": [
     {
@@ -490,6 +490,66 @@
     {
       "id": 15,
       "type": "material_found",
+      "fen": "3r2k1/1p3p1p/1p1p2n1/1r2P1p1/6P1/P6P/1P1R1PB1/3R2K1 w - - 0 29",
+      "orientation": "white",
+      "san": "exd6",
+      "uci": "e5d6",
+      "best_san": "exd6",
+      "best_uci": "e5d6",
+      "prev_san": "cxd6",
+      "prev_uci": "c7d6",
+      "opponent": "avinashghare",
+      "date": "2026-10-21",
+      "opening": "Kings Indian Attack...3.d4 Bg4 4.Bg2 e6 5.O O",
+      "eval_before": 3,
+      "eval_after": 264,
+      "eval_prev": 3,
+      "lichess_url": "https://lichess.org/analysis/standard/3r2k1%2F1p3p1p%2F1p1p2n1%2F1r2P1p1%2F6P1%2FP6P%2F1P1R1PB1%2F3R2K1_w_-_-_0_29",
+      "game_url": "https://www.chess.com/game/live/185696605388"
+    },
+    {
+      "id": 16,
+      "type": "material_found",
+      "fen": "7k/3Q2pp/1n6/p7/4P3/6PP/q5BK/8 w - - 1 43",
+      "orientation": "white",
+      "san": "Qd8+",
+      "uci": "d7d8",
+      "best_san": "Qd8+",
+      "best_uci": "d7d8",
+      "prev_san": "Nb6",
+      "prev_uci": "c8b6",
+      "opponent": "superminh306",
+      "date": "2026-10-21",
+      "opening": "Reti Opening Sicilian Invitation 2.g3 Nc6 3.Bg2 e5 4.c4",
+      "eval_before": 29,
+      "eval_after": 485,
+      "eval_prev": 29,
+      "lichess_url": "https://lichess.org/analysis/standard/7k%2F3Q2pp%2F1n6%2Fp7%2F4P3%2F6PP%2Fq5BK%2F8_w_-_-_1_43",
+      "game_url": "https://www.chess.com/game/live/185692984860"
+    },
+    {
+      "id": 17,
+      "type": "material_found",
+      "fen": "8/4k3/1p4p1/b4p1p/1n1RpP1P/4K1P1/8/8 b - - 25 65",
+      "orientation": "black",
+      "san": "Nc2+",
+      "uci": "b4c2",
+      "best_san": "Nc2+",
+      "best_uci": "b4c2",
+      "prev_san": "Rd4",
+      "prev_uci": "d1d4",
+      "opponent": "acmhome",
+      "date": "2026-10-21",
+      "opening": "Sicilian Defense Delayed Alapin Variation 3...Nf6",
+      "eval_before": 450,
+      "eval_after": 868,
+      "eval_prev": 450,
+      "lichess_url": "https://lichess.org/analysis/standard/8%2F4k3%2F1p4p1%2Fb4p1p%2F1n1RpP1P%2F4K1P1%2F8%2F8_b_-_-_25_65",
+      "game_url": "https://www.chess.com/game/live/185691982570"
+    },
+    {
+      "id": 18,
+      "type": "material_found",
       "fen": "2rq1rk1/1b1nbpp1/pp1pp2p/2p5/P1B1P1QB/2NP3P/1PP2PP1/R3R1K1 b - - 0 14",
       "orientation": "black",
       "san": "Bxh4",
@@ -508,7 +568,7 @@
       "game_url": "https://www.chess.com/game/live/185640222188"
     },
     {
-      "id": 16,
+      "id": 19,
       "type": "material_found",
       "fen": "8/7p/5k2/p4pp1/1bB1p2P/1P2P1P1/2K2P2/8 w - - 0 44",
       "orientation": "white",
@@ -528,7 +588,7 @@
       "game_url": "https://www.chess.com/game/live/185639421146"
     },
     {
-      "id": 17,
+      "id": 20,
       "type": "material_found",
       "fen": "r2q1rk1/1b2bppp/p2ppn2/Pp4B1/2P1P3/1N1P1N2/5PPP/R2Q1RK1 b - - 0 14",
       "orientation": "black",
@@ -548,7 +608,7 @@
       "game_url": "https://www.chess.com/game/live/185583349334"
     },
     {
-      "id": 18,
+      "id": 21,
       "type": "material_found",
       "fen": "r2q1rk1/1b1nbpp1/pp1p1n1p/2pNp2P/P1B1P2B/3P1N2/1PPQ1PP1/R3K2R b KQ - 3 13",
       "orientation": "black",
@@ -568,7 +628,7 @@
       "game_url": "https://www.chess.com/game/live/185512492072"
     },
     {
-      "id": 19,
+      "id": 22,
       "type": "material_found",
       "fen": "r1bq1rk1/1p1nbppp/p2ppn1B/2p5/2B1P3/3P1N2/PPPQ1PPP/RN2K2R b KQ - 3 9",
       "orientation": "black",
@@ -588,7 +648,7 @@
       "game_url": "https://www.chess.com/game/live/185465622490"
     },
     {
-      "id": 20,
+      "id": 23,
       "type": "material_found",
       "fen": "r3kb1r/ppp2ppp/2nqpn2/4Nb2/Q1pP4/6P1/PP1NPPBP/R1B2RK1 w kq - 6 10",
       "orientation": "white",
@@ -608,7 +668,7 @@
       "game_url": "https://www.chess.com/game/live/185457024718"
     },
     {
-      "id": 21,
+      "id": 24,
       "type": "material_found",
       "fen": "4brk1/2r1b1pp/pq1p4/1p1Pp1N1/2P2pQ1/1P5P/PB3PP1/2R1R1K1 b - - 9 25",
       "orientation": "black",
@@ -626,66 +686,6 @@
       "eval_prev": -346,
       "lichess_url": "https://lichess.org/analysis/standard/4brk1%2F2r1b1pp%2Fpq1p4%2F1p1Pp1N1%2F2P2pQ1%2F1P5P%2FPB3PP1%2F2R1R1K1_b_-_-_9_25",
       "game_url": "https://www.chess.com/game/live/185451096364"
-    },
-    {
-      "id": 22,
-      "type": "material_found",
-      "fen": "3r2k1/1pr3p1/pb5p/3P1p2/2B1p3/1P2P1P1/P4P1P/2RR2K1 w - - 0 28",
-      "orientation": "white",
-      "san": "d6+",
-      "uci": "d5d6",
-      "best_san": "d6+",
-      "best_uci": "d5d6",
-      "prev_san": "a6",
-      "prev_uci": "a7a6",
-      "opponent": "gisus99",
-      "date": "2026-10-16",
-      "opening": "Kings Indian Attack Yugoslav Variation 3.Bg2 Bf5 4.d3 e6 5.O O",
-      "eval_before": 71,
-      "eval_after": 493,
-      "eval_prev": 71,
-      "lichess_url": "https://lichess.org/analysis/standard/3r2k1%2F1pr3p1%2Fpb5p%2F3P1p2%2F2B1p3%2F1P2P1P1%2FP4P1P%2F2RR2K1_w_-_-_0_28",
-      "game_url": "https://www.chess.com/game/live/185431880086"
-    },
-    {
-      "id": 23,
-      "type": "material_found",
-      "fen": "2r2rk1/4bppp/R1N1p3/1P1q4/8/1Q5P/5PP1/R5K1 b - - 2 26",
-      "orientation": "black",
-      "san": "Qxb3",
-      "uci": "d5b3",
-      "best_san": "Qxb3",
-      "best_uci": "d5b3",
-      "prev_san": "Nc6",
-      "prev_uci": "e5c6",
-      "opponent": "physioclimb",
-      "date": "2026-10-16",
-      "opening": "Alapin Sicilian Defense Barmen Defense 4.d4 cxd4 5.cxd4 Nc6 6.Nf3",
-      "eval_before": -249,
-      "eval_after": 234,
-      "eval_prev": -249,
-      "lichess_url": "https://lichess.org/analysis/standard/2r2rk1%2F4bppp%2FR1N1p3%2F1P1q4%2F8%2F1Q5P%2F5PP1%2FR5K1_b_-_-_2_26",
-      "game_url": "https://www.chess.com/game/live/185431097712"
-    },
-    {
-      "id": 24,
-      "type": "material_found",
-      "fen": "2rr2k1/p1p2pb1/1p1qp1Np/8/3P4/2PQ4/PP3PPP/3RR1K1 b - - 0 21",
-      "orientation": "black",
-      "san": "fxg6",
-      "uci": "f7g6",
-      "best_san": "fxg6",
-      "best_uci": "f7g6",
-      "prev_san": "Nxg6",
-      "prev_uci": "h4g6",
-      "opponent": "ChrisNava18",
-      "date": "2026-10-16",
-      "opening": "Indian Game East Indian Colle Grunfeld Formation 5.O O O O",
-      "eval_before": 19,
-      "eval_after": 270,
-      "eval_prev": 19,
-      "lichess_url": "https://lichess.org/analysis/standard/2rr2k1%2Fp1p2pb1%2F1p1qp1Np%2F8%2F3P4%2F2PQ4%2FPP3PPP%2F3RR1K1_b_-_-_0_21",
-      "game_url": "https://www.chess.com/game/live/185428669522"
     },
     {
       "id": 25,
