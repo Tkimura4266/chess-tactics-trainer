@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22",
+  "generated_at": "2026-10-23",
   "source": "my games: all missed mates in <= 4, newest 10 material tactics each, excluding already-decided games (|eval| before opponent's move < 500cp)",
   "puzzles": [
     {
@@ -490,6 +490,26 @@
     {
       "id": 15,
       "type": "material_found",
+      "fen": "3rr1k1/5p2/p1R3pp/1p1p4/3P4/5P1P/bPB2P2/4R1K1 b - - 1 29",
+      "orientation": "black",
+      "san": "Rxe1+",
+      "uci": "e8e1",
+      "best_san": "Rxe1+",
+      "best_uci": "e8e1",
+      "prev_san": "Bc2",
+      "prev_uci": "e4c2",
+      "opponent": "agasteeswaram",
+      "date": "2026-10-22",
+      "opening": "Grunfeld Defense Burille Paris Variation 6...c6 7.O O Nbd7 8.cxd5",
+      "eval_before": 263,
+      "eval_after": 617,
+      "eval_prev": 263,
+      "lichess_url": "https://lichess.org/analysis/standard/3rr1k1%2F5p2%2Fp1R3pp%2F1p1p4%2F3P4%2F5P1P%2FbPB2P2%2F4R1K1_b_-_-_1_29",
+      "game_url": "https://www.chess.com/game/live/185751078704"
+    },
+    {
+      "id": 16,
+      "type": "material_found",
       "fen": "3r2k1/1p3p1p/1p1p2n1/1r2P1p1/6P1/P6P/1P1R1PB1/3R2K1 w - - 0 29",
       "orientation": "white",
       "san": "exd6",
@@ -508,7 +528,7 @@
       "game_url": "https://www.chess.com/game/live/185696605388"
     },
     {
-      "id": 16,
+      "id": 17,
       "type": "material_found",
       "fen": "7k/3Q2pp/1n6/p7/4P3/6PP/q5BK/8 w - - 1 43",
       "orientation": "white",
@@ -528,7 +548,7 @@
       "game_url": "https://www.chess.com/game/live/185692984860"
     },
     {
-      "id": 17,
+      "id": 18,
       "type": "material_found",
       "fen": "8/4k3/1p4p1/b4p1p/1n1RpP1P/4K1P1/8/8 b - - 25 65",
       "orientation": "black",
@@ -548,7 +568,7 @@
       "game_url": "https://www.chess.com/game/live/185691982570"
     },
     {
-      "id": 18,
+      "id": 19,
       "type": "material_found",
       "fen": "2rq1rk1/1b1nbpp1/pp1pp2p/2p5/P1B1P1QB/2NP3P/1PP2PP1/R3R1K1 b - - 0 14",
       "orientation": "black",
@@ -568,7 +588,7 @@
       "game_url": "https://www.chess.com/game/live/185640222188"
     },
     {
-      "id": 19,
+      "id": 20,
       "type": "material_found",
       "fen": "8/7p/5k2/p4pp1/1bB1p2P/1P2P1P1/2K2P2/8 w - - 0 44",
       "orientation": "white",
@@ -588,7 +608,7 @@
       "game_url": "https://www.chess.com/game/live/185639421146"
     },
     {
-      "id": 20,
+      "id": 21,
       "type": "material_found",
       "fen": "r2q1rk1/1b2bppp/p2ppn2/Pp4B1/2P1P3/1N1P1N2/5PPP/R2Q1RK1 b - - 0 14",
       "orientation": "black",
@@ -608,7 +628,7 @@
       "game_url": "https://www.chess.com/game/live/185583349334"
     },
     {
-      "id": 21,
+      "id": 22,
       "type": "material_found",
       "fen": "r2q1rk1/1b1nbpp1/pp1p1n1p/2pNp2P/P1B1P2B/3P1N2/1PPQ1PP1/R3K2R b KQ - 3 13",
       "orientation": "black",
@@ -628,7 +648,7 @@
       "game_url": "https://www.chess.com/game/live/185512492072"
     },
     {
-      "id": 22,
+      "id": 23,
       "type": "material_found",
       "fen": "r1bq1rk1/1p1nbppp/p2ppn1B/2p5/2B1P3/3P1N2/PPPQ1PPP/RN2K2R b KQ - 3 9",
       "orientation": "black",
@@ -648,7 +668,7 @@
       "game_url": "https://www.chess.com/game/live/185465622490"
     },
     {
-      "id": 23,
+      "id": 24,
       "type": "material_found",
       "fen": "r3kb1r/ppp2ppp/2nqpn2/4Nb2/Q1pP4/6P1/PP1NPPBP/R1B2RK1 w kq - 6 10",
       "orientation": "white",
@@ -666,26 +686,6 @@
       "eval_prev": 350,
       "lichess_url": "https://lichess.org/analysis/standard/r3kb1r%2Fppp2ppp%2F2nqpn2%2F4Nb2%2FQ1pP4%2F6P1%2FPP1NPPBP%2FR1B2RK1_w_kq_-_6_10",
       "game_url": "https://www.chess.com/game/live/185457024718"
-    },
-    {
-      "id": 24,
-      "type": "material_found",
-      "fen": "4brk1/2r1b1pp/pq1p4/1p1Pp1N1/2P2pQ1/1P5P/PB3PP1/2R1R1K1 b - - 9 25",
-      "orientation": "black",
-      "san": "Bxg5",
-      "uci": "e7g5",
-      "best_san": "Bxg5",
-      "best_uci": "e7g5",
-      "prev_san": "Ng5",
-      "prev_uci": "e4g5",
-      "opponent": "TrumpetJPB",
-      "date": "2026-10-17",
-      "opening": "Sicilian Defense Open Najdorf Lipnitsky Attack",
-      "eval_before": -346,
-      "eval_after": 111,
-      "eval_prev": -346,
-      "lichess_url": "https://lichess.org/analysis/standard/4brk1%2F2r1b1pp%2Fpq1p4%2F1p1Pp1N1%2F2P2pQ1%2F1P5P%2FPB3PP1%2F2R1R1K1_b_-_-_9_25",
-      "game_url": "https://www.chess.com/game/live/185451096364"
     },
     {
       "id": 25,
