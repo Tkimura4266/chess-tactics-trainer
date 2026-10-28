@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28",
+  "generated_at": "2026-10-29",
   "source": "my games: all missed mates in <= 4, newest 10 material tactics each, excluding already-decided games (|eval| before opponent's move < 500cp)",
   "puzzles": [
     {
@@ -690,6 +690,26 @@
     {
       "id": 25,
       "type": "material_missed",
+      "fen": "3r1rk1/pp3ppp/2p5/2P1bn2/8/1P1Qq2P/P3PNB1/2R2RK1 w - - 6 23",
+      "orientation": "white",
+      "san": "Qxe3",
+      "uci": "d3e3",
+      "best_san": "Qxf5",
+      "best_uci": "d3f5",
+      "prev_san": "Rbd8",
+      "prev_uci": "b8d8",
+      "opponent": "Chawkiy",
+      "date": "2026-10-28",
+      "opening": "Queens Pawn Opening Mikenas Defense 2.Nf3",
+      "eval_before": 219,
+      "eval_after": -380,
+      "eval_prev": -339,
+      "lichess_url": "https://lichess.org/analysis/standard/3r1rk1%2Fpp3ppp%2F2p5%2F2P1bn2%2F8%2F1P1Qq2P%2FP3PNB1%2F2R2RK1_w_-_-_6_23",
+      "game_url": "https://www.chess.com/game/live/186098227494"
+    },
+    {
+      "id": 26,
+      "type": "material_missed",
       "fen": "7k/2n1R2P/5KP1/8/1p4r1/8/8/8 b - - 8 66",
       "orientation": "black",
       "san": "Rf4+",
@@ -708,7 +728,7 @@
       "game_url": "https://www.chess.com/game/live/186031586606"
     },
     {
-      "id": 26,
+      "id": 27,
       "type": "material_missed",
       "fen": "rn2k2r/pp3pp1/2pbp1p1/3pn1q1/4P3/1P1P2P1/P1PN1PBP/R1BQR1K1 w kq - 1 12",
       "orientation": "white",
@@ -728,7 +748,7 @@
       "game_url": "https://www.chess.com/game/live/185981230510"
     },
     {
-      "id": 27,
+      "id": 28,
       "type": "material_missed",
       "fen": "3R4/5p1k/4p2p/6p1/3B4/5KP1/rr2PP1P/8 w - - 8 31",
       "orientation": "white",
@@ -748,7 +768,7 @@
       "game_url": "https://www.chess.com/game/live/185974040796"
     },
     {
-      "id": 28,
+      "id": 29,
       "type": "material_missed",
       "fen": "3r1rk1/p5p1/1pN2p1p/2n5/4P3/2PP4/PP4PP/3R1RK1 b - - 1 22",
       "orientation": "black",
@@ -768,7 +788,7 @@
       "game_url": "https://www.chess.com/game/live/185906111306"
     },
     {
-      "id": 29,
+      "id": 30,
       "type": "material_missed",
       "fen": "3r1knQ/p4p1p/2p2Np1/8/8/1Pq3P1/P4P1P/R5K1 w - - 6 25",
       "orientation": "white",
@@ -788,7 +808,7 @@
       "game_url": "https://www.chess.com/game/live/185865521884"
     },
     {
-      "id": 30,
+      "id": 31,
       "type": "material_missed",
       "fen": "r1bqkb1r/pp2pppp/2np1n2/6B1/4P3/2Q2N2/PPP2PPP/RN2KB1R b KQkq - 4 6",
       "orientation": "black",
@@ -808,7 +828,7 @@
       "game_url": "https://www.chess.com/game/live/185845929808"
     },
     {
-      "id": 31,
+      "id": 32,
       "type": "material_missed",
       "fen": "8/5r2/8/p2p4/P2P3k/1P3p2/4B3/1K3R2 b - - 1 45",
       "orientation": "black",
@@ -828,7 +848,7 @@
       "game_url": "https://www.chess.com/game/live/185839619638"
     },
     {
-      "id": 32,
+      "id": 33,
       "type": "material_missed",
       "fen": "3r2k1/1R3pp1/p3bn1p/2b1P2q/8/2QP1N1P/P5B1/4RK2 b - - 0 30",
       "orientation": "black",
@@ -848,7 +868,7 @@
       "game_url": "https://www.chess.com/game/live/185810396614"
     },
     {
-      "id": 33,
+      "id": 34,
       "type": "material_missed",
       "fen": "r5k1/6pp/4pp2/8/p1rPP3/Rp6/3R1BPP/6K1 b - - 3 33",
       "orientation": "black",
@@ -866,26 +886,6 @@
       "eval_prev": 249,
       "lichess_url": "https://lichess.org/analysis/standard/r5k1%2F6pp%2F4pp2%2F8%2Fp1rPP3%2FRp6%2F3R1BPP%2F6K1_b_-_-_3_33",
       "game_url": "https://www.chess.com/game/live/185507573994"
-    },
-    {
-      "id": 34,
-      "type": "material_missed",
-      "fen": "3r2k1/ppr3p1/1b5p/3P1p2/2B1p3/4P1P1/PP3P1P/2RR2K1 w - - 4 27",
-      "orientation": "white",
-      "san": "b3",
-      "uci": "b2b3",
-      "best_san": "d6+",
-      "best_uci": "d5d6",
-      "prev_san": "Rc7",
-      "prev_uci": "e7c7",
-      "opponent": "gisus99",
-      "date": "2026-10-16",
-      "opening": "Kings Indian Attack Yugoslav Variation 3.Bg2 Bf5 4.d3 e6 5.O O",
-      "eval_before": 449,
-      "eval_after": 71,
-      "eval_prev": 57,
-      "lichess_url": "https://lichess.org/analysis/standard/3r2k1%2Fppr3p1%2F1b5p%2F3P1p2%2F2B1p3%2F4P1P1%2FPP3P1P%2F2RR2K1_w_-_-_4_27",
-      "game_url": "https://www.chess.com/game/live/185431880086"
     }
   ]
 }
