@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02",
+  "generated_at": "2026-11-03",
   "source": "my games: all missed mates in <= 4, newest 10 material tactics each, excluding already-decided games (|eval| before opponent's move < 500cp)",
   "puzzles": [
     {
@@ -555,6 +555,26 @@
     {
       "id": 17,
       "type": "material_found",
+      "fen": "r2q1rk1/1b3pp1/p2pp2p/1p6/4R3/1BP2N2/P1PQ1PPP/3R2K1 b - - 0 17",
+      "orientation": "black",
+      "san": "Bxe4",
+      "uci": "b7e4",
+      "best_san": "Bxe4",
+      "best_uci": "b7e4",
+      "prev_san": "Rxe4",
+      "prev_uci": "e1e4",
+      "opponent": "emoney538",
+      "date": "2026-11-02",
+      "opening": "Sicilian Defense 2.Nf3 d6 3.Bc4 Nf6 4.Nc3",
+      "eval_before": 207,
+      "eval_after": 429,
+      "eval_prev": 207,
+      "lichess_url": "https://lichess.org/analysis/standard/r2q1rk1%2F1b3pp1%2Fp2pp2p%2F1p6%2F4R3%2F1BP2N2%2FP1PQ1PPP%2F3R2K1_b_-_-_0_17",
+      "game_url": "https://www.chess.com/game/live/186399822586"
+    },
+    {
+      "id": 18,
+      "type": "material_found",
       "fen": "r1b2r1k/ppq1bppp/4pn2/2p3BN/8/P2P4/1PP2PQP/R3KB1R b KQ - 9 17",
       "orientation": "black",
       "san": "Nxh5",
@@ -573,7 +593,7 @@
       "game_url": "https://www.chess.com/game/live/186339301202"
     },
     {
-      "id": 18,
+      "id": 19,
       "type": "material_found",
       "fen": "2k5/1p6/p1p5/2rpp1pR/PP4P1/8/5K2/8 w - - 0 46",
       "orientation": "white",
@@ -593,7 +613,7 @@
       "game_url": "https://www.chess.com/game/live/186334140636"
     },
     {
-      "id": 19,
+      "id": 20,
       "type": "material_found",
       "fen": "2rq1rk1/1b2bppp/p2p4/4pPB1/R5n1/2P2N2/1P2N1PP/3Q1RK1 b - - 3 20",
       "orientation": "black",
@@ -613,7 +633,7 @@
       "game_url": "https://www.chess.com/game/live/186331442774"
     },
     {
-      "id": 20,
+      "id": 21,
       "type": "material_found",
       "fen": "r5k1/1p2pp1p/1qprb1p1/p5N1/3PP3/2Q4P/PPP3P1/1K3R1R b - - 3 20",
       "orientation": "black",
@@ -633,7 +653,7 @@
       "game_url": "https://www.chess.com/game/live/186324264902"
     },
     {
-      "id": 21,
+      "id": 22,
       "type": "material_found",
       "fen": "5rk1/p2p1ppp/1p2p3/1P1nn3/5B2/P7/P3BPPP/2R3K1 b - - 2 21",
       "orientation": "black",
@@ -653,7 +673,7 @@
       "game_url": "https://www.chess.com/game/live/186274928824"
     },
     {
-      "id": 22,
+      "id": 23,
       "type": "material_found",
       "fen": "8/8/4R3/1p1rp1k1/1P4Pn/3P4/5P2/4R1K1 b - - 1 38",
       "orientation": "black",
@@ -673,7 +693,7 @@
       "game_url": "https://www.chess.com/game/live/186268901004"
     },
     {
-      "id": 23,
+      "id": 24,
       "type": "material_found",
       "fen": "r2bk1nr/pB3ppp/2n1p3/8/8/6P1/RP2RP1P/1NB3K1 w kq - 1 16",
       "orientation": "white",
@@ -693,7 +713,7 @@
       "game_url": "https://www.chess.com/game/live/186263872430"
     },
     {
-      "id": 24,
+      "id": 25,
       "type": "material_found",
       "fen": "r2q1rk1/pp1n1ppp/3np1b1/2b5/2NN4/1P4P1/PB3PBP/R2QR1K1 w - - 4 17",
       "orientation": "white",
@@ -713,7 +733,7 @@
       "game_url": "https://www.chess.com/game/live/186220974174"
     },
     {
-      "id": 25,
+      "id": 26,
       "type": "material_found",
       "fen": "r3kbnr/pppq1ppp/2n1p3/3p4/2PP4/5NPb/PP2PPBP/RNBQ1RK1 w kq - 0 7",
       "orientation": "white",
@@ -731,26 +751,6 @@
       "eval_prev": 56,
       "lichess_url": "https://lichess.org/analysis/standard/r3kbnr%2Fpppq1ppp%2F2n1p3%2F3p4%2F2PP4%2F5NPb%2FPP2PPBP%2FRNBQ1RK1_w_kq_-_0_7",
       "game_url": "https://www.chess.com/game/live/186219701856"
-    },
-    {
-      "id": 26,
-      "type": "material_found",
-      "fen": "8/1R4p1/6kp/p7/1bB5/1P2P1P1/2r2PKP/8 w - - 3 35",
-      "orientation": "white",
-      "san": "Bd3+",
-      "uci": "c4d3",
-      "best_san": "Bd3+",
-      "best_uci": "c4d3",
-      "prev_san": "Rc2",
-      "prev_uci": "b2c2",
-      "opponent": "smilinsteve",
-      "date": "2026-10-30",
-      "opening": "English Opening Symmetrical Variation...3.g3 Nc6 4.d4 cxd4 5.Nxd4",
-      "eval_before": 318,
-      "eval_after": 676,
-      "eval_prev": 318,
-      "lichess_url": "https://lichess.org/analysis/standard/8%2F1R4p1%2F6kp%2Fp7%2F1bB5%2F1P2P1P1%2F2r2PKP%2F8_w_-_-_3_35",
-      "game_url": "https://www.chess.com/game/live/186219146036"
     },
     {
       "id": 27,
