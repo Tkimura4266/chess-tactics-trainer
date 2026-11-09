@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09",
+  "generated_at": "2026-11-10",
   "source": "my games: all missed mates in <= 4, newest 10 material tactics each, excluding already-decided games (|eval| before opponent's move < 500cp)",
   "puzzles": [
     {
@@ -555,6 +555,26 @@
     {
       "id": 17,
       "type": "material_found",
+      "fen": "1b1r2k1/1p3qp1/p5np/3N2r1/8/1P4P1/PB1Q1P1P/2RR3K w - - 1 25",
+      "orientation": "white",
+      "san": "Nf6+",
+      "uci": "d5f6",
+      "best_san": "Nf6+",
+      "best_uci": "d5f6",
+      "prev_san": "Bb8",
+      "prev_uci": "d6b8",
+      "opponent": "kurniawandjumhari",
+      "date": "2026-11-09",
+      "opening": "Kings Indian Attack French Variation 4.d4 e6",
+      "eval_before": -324,
+      "eval_after": 596,
+      "eval_prev": -324,
+      "lichess_url": "https://lichess.org/analysis/standard/1b1r2k1%2F1p3qp1%2Fp5np%2F3N2r1%2F8%2F1P4P1%2FPB1Q1P1P%2F2RR3K_w_-_-_1_25",
+      "game_url": "https://www.chess.com/game/live/186844207608"
+    },
+    {
+      "id": 18,
+      "type": "material_found",
       "fen": "2k1r3/pp4p1/1qpQp2b/4Bp2/8/1P1P4/6B1/5K2 w - - 13 41",
       "orientation": "white",
       "san": "Qb8+",
@@ -573,7 +593,7 @@
       "game_url": "https://www.chess.com/game/live/186784208040"
     },
     {
-      "id": 18,
+      "id": 19,
       "type": "material_found",
       "fen": "8/7p/3p1kb1/1p6/p1P1P3/P5P1/1PP2KN1/8 b - - 0 35",
       "orientation": "black",
@@ -593,7 +613,7 @@
       "game_url": "https://www.chess.com/game/live/186777958218"
     },
     {
-      "id": 19,
+      "id": 20,
       "type": "material_found",
       "fen": "2k5/p1p3p1/1pN1pn1p/3r4/1P4P1/P3P2P/2R1K3/8 w - - 5 38",
       "orientation": "white",
@@ -613,7 +633,7 @@
       "game_url": "https://www.chess.com/game/live/186776436394"
     },
     {
-      "id": 20,
+      "id": 21,
       "type": "material_found",
       "fen": "r2qr1k1/pp1nppbp/2N3p1/5b2/3P4/2P3P1/PP3PBP/R1BQR1K1 b - - 0 14",
       "orientation": "black",
@@ -633,7 +653,7 @@
       "game_url": "https://www.chess.com/game/live/186769230098"
     },
     {
-      "id": 21,
+      "id": 22,
       "type": "material_found",
       "fen": "3q1r2/1br1b1kB/pp1p3p/2pP1p2/1PP1Q3/P5R1/3P1PPP/R5K1 b - - 1 22",
       "orientation": "black",
@@ -653,7 +673,7 @@
       "game_url": "https://www.chess.com/game/live/186767264256"
     },
     {
-      "id": 22,
+      "id": 23,
       "type": "material_found",
       "fen": "2r1r1k1/p2qnppp/1p3b2/3p4/3p3P/1P2P1PB/PBQ2P1K/2R2R2 w - - 0 21",
       "orientation": "white",
@@ -673,7 +693,7 @@
       "game_url": "https://www.chess.com/game/live/186766089628"
     },
     {
-      "id": 23,
+      "id": 24,
       "type": "material_found",
       "fen": "1n3rk1/5ppp/1p1rpb1B/p3P3/q2N2Q1/2P5/5PPP/2RR2K1 b - - 0 25",
       "orientation": "black",
@@ -693,7 +713,7 @@
       "game_url": "https://www.chess.com/game/live/186765067770"
     },
     {
-      "id": 24,
+      "id": 25,
       "type": "material_found",
       "fen": "r1b1qBk1/p4pbp/2p2np1/2np4/3N4/2NB3P/PP3PP1/R2Q1RK1 b - - 0 15",
       "orientation": "black",
@@ -713,7 +733,7 @@
       "game_url": "https://www.chess.com/game/live/186763056332"
     },
     {
-      "id": 25,
+      "id": 26,
       "type": "material_found",
       "fen": "2r5/RR3pkp/6p1/2bPp3/P1p1P3/2P3PK/3r3P/8 w - - 0 35",
       "orientation": "white",
@@ -731,26 +751,6 @@
       "eval_prev": -375,
       "lichess_url": "https://lichess.org/analysis/standard/2r5%2FRR3pkp%2F6p1%2F2bPp3%2FP1p1P3%2F2P3PK%2F3r3P%2F8_w_-_-_0_35",
       "game_url": "https://www.chess.com/game/live/186761392842"
-    },
-    {
-      "id": 26,
-      "type": "material_found",
-      "fen": "4r2k/pp4bp/2p3p1/8/4p1P1/1PP4P/P5K1/R3R3 b - - 1 27",
-      "orientation": "black",
-      "san": "Bxc3",
-      "uci": "g7c3",
-      "best_san": "Bxc3",
-      "best_uci": "g7c3",
-      "prev_san": "Re1",
-      "prev_uci": "c1e1",
-      "opponent": "Jefrook",
-      "date": "2026-11-08",
-      "opening": "London System 3...g6 4.e3 Bg7 5.h3",
-      "eval_before": -211,
-      "eval_after": 212,
-      "eval_prev": -211,
-      "lichess_url": "https://lichess.org/analysis/standard/4r2k%2Fpp4bp%2F2p3p1%2F8%2F4p1P1%2F1PP4P%2FP5K1%2FR3R3_b_-_-_1_27",
-      "game_url": "https://www.chess.com/game/live/186758180724"
     },
     {
       "id": 27,
