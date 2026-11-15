@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15",
+  "generated_at": "2026-11-16",
   "source": "my games: all missed mates in <= 4, newest 10 material tactics each, excluding already-decided games (|eval| before opponent's move < 500cp)",
   "puzzles": [
     {
@@ -585,6 +585,46 @@
     {
       "id": 18,
       "type": "material_found",
+      "fen": "r1bq1rk1/p1pn1pbp/1pn3p1/3p4/3P4/4PNP1/PPQN1PBP/R1B2RK1 w - - 0 11",
+      "orientation": "white",
+      "san": "Qxc6",
+      "uci": "c2c6",
+      "best_san": "Qxc6",
+      "best_uci": "c2c6",
+      "prev_san": "exd5",
+      "prev_uci": "e6d5",
+      "opponent": "adrianoveronez",
+      "date": "2026-11-15",
+      "opening": "Queens Gambit Declined Catalan Opening...5.Bg2 Bg7 6.O O O O 7.Qc2",
+      "eval_before": 79,
+      "eval_after": 443,
+      "eval_prev": 79,
+      "lichess_url": "https://lichess.org/analysis/standard/r1bq1rk1%2Fp1pn1pbp%2F1pn3p1%2F3p4%2F3P4%2F4PNP1%2FPPQN1PBP%2FR1B2RK1_w_-_-_0_11",
+      "game_url": "https://www.chess.com/game/live/187261667448"
+    },
+    {
+      "id": 19,
+      "type": "material_found",
+      "fen": "r2q1rk1/pbp2pp1/1p2pb1p/4N3/3P1n2/2P3P1/PPQ2PBP/3RR1K1 w - - 0 17",
+      "orientation": "white",
+      "san": "Bxb7",
+      "uci": "g2b7",
+      "best_san": "Bxb7",
+      "best_uci": "g2b7",
+      "prev_san": "Nxf4",
+      "prev_uci": "d5f4",
+      "opponent": "Mija_Zanic",
+      "date": "2026-11-15",
+      "opening": "Reti Opening Kings Indian Attack",
+      "eval_before": 28,
+      "eval_after": 296,
+      "eval_prev": 28,
+      "lichess_url": "https://lichess.org/analysis/standard/r2q1rk1%2Fpbp2pp1%2F1p2pb1p%2F4N3%2F3P1n2%2F2P3P1%2FPPQ2PBP%2F3RR1K1_w_-_-_0_17",
+      "game_url": "https://www.chess.com/game/live/187237482760"
+    },
+    {
+      "id": 20,
+      "type": "material_found",
       "fen": "1r3rk1/1bqnbppp/p2p1n2/3Pp1B1/2B5/2N1QN2/P4PPP/1R3RK1 b - - 7 18",
       "orientation": "black",
       "san": "Qxc4",
@@ -603,7 +643,7 @@
       "game_url": "https://www.chess.com/game/live/187198533778"
     },
     {
-      "id": 19,
+      "id": 21,
       "type": "material_found",
       "fen": "q3k2r/p1pnbpp1/1p2p3/1N6/Q1pP3p/6P1/PP2PP1P/R1B2RK1 w k - 0 14",
       "orientation": "white",
@@ -623,7 +663,7 @@
       "game_url": "https://www.chess.com/game/live/187198157448"
     },
     {
-      "id": 20,
+      "id": 22,
       "type": "material_found",
       "fen": "3rr1k1/2q2p2/p3pb1p/1p1bN1P1/2pP1Q2/P4PP1/BPP1R3/2KR4 b - - 0 25",
       "orientation": "black",
@@ -643,7 +683,7 @@
       "game_url": "https://www.chess.com/game/live/187196567148"
     },
     {
-      "id": 21,
+      "id": 23,
       "type": "material_found",
       "fen": "8/pp1k1p1p/1n2pQp1/3pP3/3q4/6PP/5PBK/8 w - - 14 37",
       "orientation": "white",
@@ -663,7 +703,7 @@
       "game_url": "https://www.chess.com/game/live/187195478502"
     },
     {
-      "id": 22,
+      "id": 24,
       "type": "material_found",
       "fen": "1k5r/pp4pp/1qp1Qb2/8/1P3PP1/P3P3/2Pr2B1/1RK4R w - - 0 24",
       "orientation": "white",
@@ -683,7 +723,7 @@
       "game_url": "https://www.chess.com/game/live/187193727152"
     },
     {
-      "id": 23,
+      "id": 25,
       "type": "material_found",
       "fen": "2r2rk1/p1R2p1p/6p1/1p6/1P1P4/P6P/5PP1/5RK1 b - - 0 20",
       "orientation": "black",
@@ -703,7 +743,7 @@
       "game_url": "https://www.chess.com/game/live/187189726862"
     },
     {
-      "id": 24,
+      "id": 26,
       "type": "material_found",
       "fen": "8/p5p1/2n2kp1/3q1p2/2p2P2/P1P1Q1P1/1r5P/3R2K1 w - - 0 29",
       "orientation": "white",
@@ -723,7 +763,7 @@
       "game_url": "https://www.chess.com/game/live/187186108916"
     },
     {
-      "id": 25,
+      "id": 27,
       "type": "material_found",
       "fen": "2r5/5ppk/p3p2q/1p1pPP1P/6Q1/P7/1P6/K6R b - - 0 31",
       "orientation": "black",
@@ -741,46 +781,6 @@
       "eval_prev": 138,
       "lichess_url": "https://lichess.org/analysis/standard/2r5%2F5ppk%2Fp3p2q%2F1p1pPP1P%2F6Q1%2FP7%2F1P6%2FK6R_b_-_-_0_31",
       "game_url": "https://www.chess.com/game/live/187185619040"
-    },
-    {
-      "id": 26,
-      "type": "material_found",
-      "fen": "r2q1rk1/p4ppp/4bn2/2bpp3/8/6P1/PPQ1PPBP/RNBR2K1 w - - 0 13",
-      "orientation": "white",
-      "san": "Qxc5",
-      "uci": "c2c5",
-      "best_san": "Qxc5",
-      "best_uci": "c2c5",
-      "prev_san": "cxd5",
-      "prev_uci": "c6d5",
-      "opponent": "MagnusNiu123",
-      "date": "2026-11-14",
-      "opening": "Kings Indian Attack French Variation...6.Nxd4 e5 7.Nxc6 bxc6 8.c4",
-      "eval_before": 127,
-      "eval_after": 329,
-      "eval_prev": 127,
-      "lichess_url": "https://lichess.org/analysis/standard/r2q1rk1%2Fp4ppp%2F4bn2%2F2bpp3%2F8%2F6P1%2FPPQ1PPBP%2FRNBR2K1_w_-_-_0_13",
-      "game_url": "https://www.chess.com/game/live/187169802642"
-    },
-    {
-      "id": 27,
-      "type": "material_found",
-      "fen": "r1r3k1/3n1pp1/1qn1p2p/2RpNb2/pP1P4/P5P1/1B1QPPBP/2R3K1 w - - 4 21",
-      "orientation": "white",
-      "san": "Rxc6",
-      "uci": "c5c6",
-      "best_san": "Rxc6",
-      "best_uci": "c5c6",
-      "prev_san": "Nd7",
-      "prev_uci": "f6d7",
-      "opponent": "Mikeveli",
-      "date": "2026-11-14",
-      "opening": "Kings Indian Attack...3.d4 Bf5 4.Bg2 e6 5.O O",
-      "eval_before": 231,
-      "eval_after": 456,
-      "eval_prev": 231,
-      "lichess_url": "https://lichess.org/analysis/standard/r1r3k1%2F3n1pp1%2F1qn1p2p%2F2RpNb2%2FpP1P4%2FP5P1%2F1B1QPPBP%2F2R3K1_w_-_-_4_21",
-      "game_url": "https://www.chess.com/game/live/187168398846"
     },
     {
       "id": 28,
