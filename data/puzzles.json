@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18",
+  "generated_at": "2026-11-19",
   "source": "my games: all missed mates in <= 4, newest 10 material tactics each, excluding already-decided games (|eval| before opponent's move < 500cp)",
   "puzzles": [
     {
@@ -585,6 +585,26 @@
     {
       "id": 18,
       "type": "material_found",
+      "fen": "r4rk1/3n1pp1/b2qp2p/p2p4/Pp1P4/1P2P1nP/1B1N1PB1/2RQR1K1 w - - 0 20",
+      "orientation": "white",
+      "san": "fxg3",
+      "uci": "f2g3",
+      "best_san": "fxg3",
+      "best_uci": "f2g3",
+      "prev_san": "Nxg3",
+      "prev_uci": "e4g3",
+      "opponent": "Nong77",
+      "date": "2026-11-18",
+      "opening": "Reti Opening Queens Gambit Invitation 2.g3",
+      "eval_before": -105,
+      "eval_after": 232,
+      "eval_prev": -105,
+      "lichess_url": "https://lichess.org/analysis/standard/r4rk1%2F3n1pp1%2Fb2qp2p%2Fp2p4%2FPp1P4%2F1P2P1nP%2F1B1N1PB1%2F2RQR1K1_w_-_-_0_20",
+      "game_url": "https://www.chess.com/game/live/187477853710"
+    },
+    {
+      "id": 19,
+      "type": "material_found",
       "fen": "2b1k2r/1pqn1ppp/5n2/1pPpp3/3P4/2N2NP1/4PPBP/Q4RK1 w k - 0 17",
       "orientation": "white",
       "san": "Nxb5",
@@ -603,7 +623,7 @@
       "game_url": "https://www.chess.com/game/live/187408912832"
     },
     {
-      "id": 19,
+      "id": 20,
       "type": "material_found",
       "fen": "3r1rk1/ppp1pp1p/4b1p1/1B2N3/2n5/7P/q5P1/2R1QRK1 b - - 1 18",
       "orientation": "black",
@@ -623,7 +643,7 @@
       "game_url": "https://www.chess.com/game/live/187407414904"
     },
     {
-      "id": 20,
+      "id": 21,
       "type": "material_found",
       "fen": "r1b2r2/pp1p2kB/4p1P1/6R1/q7/2P5/1P1N2P1/2K2R2 b - - 2 23",
       "orientation": "black",
@@ -643,7 +663,7 @@
       "game_url": "https://www.chess.com/game/live/187406733164"
     },
     {
-      "id": 21,
+      "id": 22,
       "type": "material_found",
       "fen": "2r2n1k/5pp1/pp6/5P2/P7/4qB2/1PPR3P/R4Q1K b - - 0 27",
       "orientation": "black",
@@ -663,7 +683,7 @@
       "game_url": "https://www.chess.com/game/live/187326948244"
     },
     {
-      "id": 22,
+      "id": 23,
       "type": "material_found",
       "fen": "r1bq1rk1/p1pn1pbp/1pn3p1/3p4/3P4/4PNP1/PPQN1PBP/R1B2RK1 w - - 0 11",
       "orientation": "white",
@@ -683,7 +703,7 @@
       "game_url": "https://www.chess.com/game/live/187261667448"
     },
     {
-      "id": 23,
+      "id": 24,
       "type": "material_found",
       "fen": "r2q1rk1/pbp2pp1/1p2pb1p/4N3/3P1n2/2P3P1/PPQ2PBP/3RR1K1 w - - 0 17",
       "orientation": "white",
@@ -703,7 +723,7 @@
       "game_url": "https://www.chess.com/game/live/187237482760"
     },
     {
-      "id": 24,
+      "id": 25,
       "type": "material_found",
       "fen": "1r3rk1/1bqnbppp/p2p1n2/3Pp1B1/2B5/2N1QN2/P4PPP/1R3RK1 b - - 7 18",
       "orientation": "black",
@@ -723,7 +743,7 @@
       "game_url": "https://www.chess.com/game/live/187198533778"
     },
     {
-      "id": 25,
+      "id": 26,
       "type": "material_found",
       "fen": "q3k2r/p1pnbpp1/1p2p3/1N6/Q1pP3p/6P1/PP2PP1P/R1B2RK1 w k - 0 14",
       "orientation": "white",
@@ -743,7 +763,7 @@
       "game_url": "https://www.chess.com/game/live/187198157448"
     },
     {
-      "id": 26,
+      "id": 27,
       "type": "material_found",
       "fen": "3rr1k1/2q2p2/p3pb1p/1p1bN1P1/2pP1Q2/P4PP1/BPP1R3/2KR4 b - - 0 25",
       "orientation": "black",
@@ -761,26 +781,6 @@
       "eval_prev": -436,
       "lichess_url": "https://lichess.org/analysis/standard/3rr1k1%2F2q2p2%2Fp3pb1p%2F1p1bN1P1%2F2pP1Q2%2FP4PP1%2FBPP1R3%2F2KR4_b_-_-_0_25",
       "game_url": "https://www.chess.com/game/live/187196567148"
-    },
-    {
-      "id": 27,
-      "type": "material_found",
-      "fen": "8/pp1k1p1p/1n2pQp1/3pP3/3q4/6PP/5PBK/8 w - - 14 37",
-      "orientation": "white",
-      "san": "Qxf7+",
-      "uci": "f6f7",
-      "best_san": "Qxf7+",
-      "best_uci": "f6f7",
-      "prev_san": "Kd7",
-      "prev_uci": "e7d7",
-      "opponent": "bartuuu1907",
-      "date": "2026-11-14",
-      "opening": "Queens Pawn Opening Pseudo Catalan Variation 3...g6 4.Bg2 Bg7 5.O O",
-      "eval_before": -296,
-      "eval_after": 190,
-      "eval_prev": -296,
-      "lichess_url": "https://lichess.org/analysis/standard/8%2Fpp1k1p1p%2F1n2pQp1%2F3pP3%2F3q4%2F6PP%2F5PBK%2F8_w_-_-_14_37",
-      "game_url": "https://www.chess.com/game/live/187195478502"
     },
     {
       "id": 28,
